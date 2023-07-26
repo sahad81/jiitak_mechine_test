@@ -6,7 +6,7 @@ import 'package:jiitak_inc_ui_task/helper/route_helper.dart';
 import 'package:jiitak_inc_ui_task/until/images.dart';
 import 'package:jiitak_inc_ui_task/view/base/custom_text_filed.dart';
 import 'package:akar_icons_flutter/akar_icons_flutter.dart';
-import 'package:jiitak_inc_ui_task/view/screens/searchresult/searchresult.dart';
+import 'package:jiitak_inc_ui_task/view/screens/demyScreens/searchresult.dart';
 
 import 'days_widget.dart';
 
@@ -56,7 +56,10 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+Get.toNamed(RouteHelper.editpage);
+
+                          },
                           icon: const Icon(AkarIcons.settings_vertical,
                               color: Colors.grey)),
                     ),

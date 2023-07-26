@@ -1,54 +1,37 @@
-
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatefulWidget {
   final String hintText;
-  
+
   final FocusNode? focusNode;
   final FocusNode? nextFocus;
+  final TextEditingController? controller;
 
 
-
-  final bool isEnabled;
- 
-
-
-  final GlobalKey<FormFieldState<String>>? key;
-  final bool showBorder;
-
-  MyTextField(
-      {this.hintText = 'text',
-     
-      this.focusNode,
-      this.nextFocus,
-      this.isEnabled = true,
-    
-      this.showBorder = false,
-      this.key});
+  const MyTextField({
+    super.key,
+    this.hintText = 'text',
+    this.controller,
+    this.focusNode,
+    this.nextFocus,
+  });
 
   @override
   _MyTextFieldState createState() => _MyTextFieldState();
 }
 
 class _MyTextFieldState extends State<MyTextField> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: widget.showBorder
-              ? Border.all(color: Theme.of(context).disabledColor)
-              : null),
+          border:
+               Border.all(color: Theme.of(context).disabledColor)
+              ),
       child: TextField(
         key: widget.key,
-      
-    
+        controller: widget.controller,
         focusNode: widget.focusNode,
-       
-  
-      
-
         decoration: InputDecoration(
           hintText: widget.hintText,
           isDense: true,
@@ -57,13 +40,8 @@ class _MyTextFieldState extends State<MyTextField> {
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide.none),
-        
-    
         ),
-
       ),
     );
   }
-
-
 }

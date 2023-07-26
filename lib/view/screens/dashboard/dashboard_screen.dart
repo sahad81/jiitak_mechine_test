@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 import 'package:jiitak_inc_ui_task/controlls/home_controller.dart';
 import 'package:jiitak_inc_ui_task/view/screens/dashboard/widget/bottom_nav_item.dart';
 import 'package:jiitak_inc_ui_task/view/screens/homeScreen/home_screen.dart';
-import 'package:jiitak_inc_ui_task/view/screens/msg/message_screen.dart';
-import 'package:jiitak_inc_ui_task/view/screens/order/order_screen.dart';
-import 'package:jiitak_inc_ui_task/view/screens/scanner/scanner_screen.dart';
+import 'package:jiitak_inc_ui_task/view/screens/demyScreens/message_screen.dart';
+import 'package:jiitak_inc_ui_task/view/screens/demyScreens/order_screen.dart';
+import 'package:jiitak_inc_ui_task/view/screens/demyScreens/scanner_screen.dart';
 import 'package:jiitak_inc_ui_task/until/dimensions.dart';
 import 'package:jiitak_inc_ui_task/until/images.dart';
 
-import '../profile/profile_screen.dart';
+import '../demyScreens/profile_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   final int pageIndex;
