@@ -6,15 +6,7 @@ class Homecontroller extends GetxController implements GetxService {
   int _currentIndex = 0;
   int get currentIndex => _currentIndex;
 
-  setpage(
-    int page,
-    int pageindex,
-    PageController? pgcontroller,
-  ) {
-    pgcontroller?.jumpToPage(pageindex);
-    page = pageindex;
-    update();
-  }
+
 
 
   void selectedCard(int index){

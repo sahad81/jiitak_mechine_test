@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiitak_inc_ui_task/helper/route_helper.dart';
+import 'package:jiitak_inc_ui_task/until/app_const.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(  Duration(seconds: 4)).then((value) =>Get.offNamed(RouteHelper.getdash()));
+    Future.delayed(  Duration(seconds: 3)).then((value) =>Get.offNamed(RouteHelper.getdash()));
     super.initState();
   }
   @override
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return  const Scaffold(
       body: SafeArea(
         child: Center(
-        child:  Text('JITAk')     ),
+        child:  Text(AppConstants.APP_NAME)     ),
       ),
     );
   }

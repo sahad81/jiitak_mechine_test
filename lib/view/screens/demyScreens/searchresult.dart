@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jiitak_inc_ui_task/view/base/custom_text_filed.dart';
 
 class Result extends StatelessWidget {
   const Result({super.key});
@@ -6,7 +7,16 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-body:Center(child: Text('searchPage'),),
+body:SafeArea(child: 
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child:   MyTextField(
+  
+    hintText: 'search',
+  
+  ),
+)
+)
 
     );
   }

@@ -17,15 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-       //   resizeToAvoidBottomInset: false,
-        // floatingActionButton: FloatingActionButton(
-        //   elevation: 4,
-        //   backgroundColor: Theme.of(context).cardColor,
-        //   onPressed: () {},
-        //   child:  Icon(CupertinoIcons.location_solid),
-        //   shape: const CircleBorder(),
-        // ),
+        
         body: Scaffold(
           body: CustomScrollView(
               physics: const AlwaysScrollableScrollPhysics(),

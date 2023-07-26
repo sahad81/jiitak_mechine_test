@@ -35,7 +35,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     _pageController = PageController(initialPage: widget.pageIndex);
 
     _screens = [
-       HomeScreen(),
+      HomeScreen(),
       const OrderScreen(),
       const ScannerScreen(),
       const MessageScreen(),
@@ -63,11 +63,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 color: _pageIndex == 2 ? Colors.white : Colors.black,
               )),
           SizedBox(
-            height: 2,
-          ),
-          Text(
-            'スキャナー',
-            style: TextStyle(fontSize: Dimensions.FONT_SIZE_SMALL),
+            height: 10,
           ),
           SizedBox(
             height: 20,
@@ -115,9 +111,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   void _setPage(int pageIndex) {
-    Get.find<Homecontroller>().setpage(_pageIndex, pageIndex, _pageController);
     setState(() {
-      _pageIndex=pageIndex;
+      _pageIndex = pageIndex;
     });
   }
 }

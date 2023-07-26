@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:jiitak_inc_ui_task/until/images.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 
@@ -21,7 +22,9 @@ class SetupScreen extends StatelessWidget {
             elevation: 0,
             automaticallyImplyLeading: false,
             leading: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                Navigator.pop(context);
+                },
                 icon: Image.asset(
                   Images.backbtn,
                   width: 30,
@@ -101,42 +104,45 @@ class SetupScreen extends StatelessWidget {
                                   padding: EdgeInsets.only(
                                       left: 20, top: 30, bottom: 10),
                                   child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).cardColor,
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey[300]!,
-                                          blurRadius: 5,
-                                          spreadRadius: 1,
-                                        )
-                                      ],
-                                    ),
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.9,
-                                    height: 400,
-                                    child: GridView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      physics: NeverScrollableScrollPhysics(),
-                                      gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 3,
+  decoration: BoxDecoration(
+    color: Theme.of(context).cardColor,
+    borderRadius: BorderRadius.all(Radius.circular(20)),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey[300]!,
+        blurRadius: 5,
+        spreadRadius: 1,
+      )
+    ],
+  ),
+  width:MediaQuery.of(context).size.width*0.9,
+  height:MediaQuery.of(context).size.width*0.5,
+  child: GridView.builder(
+    scrollDirection: Axis.horizontal,
+    physics: NeverScrollableScrollPhysics(),
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 3,
                                         mainAxisSpacing:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
+                                         MediaQuery.of(context).size.width *
+                                                0.023,
                                         crossAxisSpacing:
                                             MediaQuery.of(context).size.width *
-                                                0.02,
+                                                0.04,
                                       ),
-                                      itemBuilder: (context, index) =>
-                                          Image.asset(
-                                        Images.star,
-                                        width: 50,
-                                      ),
-                                      itemCount: 15,
-                                    ),
-                                  ),
+    itemBuilder: (context, index) => FractionallySizedBox(
+      widthFactor:0.8, // Make the image widget occupy the entire available width
+      child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: Image.asset(
+          Images.star,
+          fit: BoxFit.fill, // Adjust the fit as needed
+        ),
+      ),
+    ),
+    itemCount: 15,
+  ),
+)
+
                                 );
                               },
                             ),
